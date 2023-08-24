@@ -6,7 +6,7 @@ type TodoListProps = {
 
     todos: TodoType[];
 
-}
+};
 
 const TodoList : React.FC<TodoListProps> = ({todos}) => {
     return (

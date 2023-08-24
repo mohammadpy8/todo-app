@@ -6,7 +6,7 @@ const Todo: React.FC<React.PropsWithChildren<TodoType>> = ({ id, title, isComplt
     
     const styles: React.CSSProperties = {
         fontSize: "3.5rem",
-        backgroundColor: color,
+        color,
     };
 
     const clickHandler = (event: React.MouseEvent<HTMLHeadingElement, MouseEvent>) => event.preventDefault();
