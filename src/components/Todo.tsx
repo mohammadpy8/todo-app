@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Todo as TodoType } from './TodoList';
+import { Todo as TodoType } from '../types/Todo.type';
 
 const Todo: React.FC<React.PropsWithChildren<TodoType>> = ({ id, title, isComplte, color, children }) => {
     

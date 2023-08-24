@@ -1,16 +1,10 @@
 import React from 'react';
 import Todo from './Todo';
-
-export type Todo = {
-    id: string;
-    title: string;
-    isComplte: boolean;
-    color: string;
-}
+import { Todo as TodoType } from '../types/Todo.type';
 
 type TodoListProps = {
 
-    todos: Todo[];
+    todos: TodoType[];
 
 }
 

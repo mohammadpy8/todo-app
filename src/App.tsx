@@ -2,7 +2,7 @@ import React from 'react';
 
 import TodoList from './components/TodoList';
 
-import { Todo } from './components/TodoList';
+import { Todo } from './types/Todo.type';
 
 import './App.css'
 
