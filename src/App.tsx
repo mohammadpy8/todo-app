@@ -5,6 +5,7 @@ import TodoList from './components/TodoList';
 import { Todo } from './types/Todo.type';
 
 import './App.css'
+import Counter from './components/Counter';
 
 const App: React.FC<Todo[]> = (): React.ReactNode => {
 
@@ -36,8 +37,9 @@ const App: React.FC<Todo[]> = (): React.ReactNode => {
 
   return (
     <>
-      <TodoList todos={todosState}/>
+      {/* <TodoList todos={todosState}/> */}
       <h1>mohammad</h1>
+      <Counter />
     </>
   )
 };
