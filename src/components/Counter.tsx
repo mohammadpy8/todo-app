@@ -4,10 +4,15 @@ type CounterType = {
     counterValue: number;
 }
 
-type ActionType = {
-    type: string;
+type UpdateAction = {
+    type: "INCREASE" | "DECREASE";
     payload: number;
 }
+
+type ResetAction = {
+    type: "RESET";
+}
+type ActionType = UpdateAction | ResetAction;
 
 const intitalState = {
     counterValue: 0,
@@ -39,7 +44,7 @@ const Counter = () => {
             count: {state.counterValue}
             <button onClick={() => dispatch({type: "INCREASE", payload:10})}>increament</button>
             <button onClick={() => dispatch({type: "DECREASE", payload:5})}>dectrament</button>
-            <button onClick={() => dispatch({type: "RESET", payload:0})}>reset</button>
+            <button onClick={() => dispatch({type: "RESET"})}>reset</button>
         </>
     );
 };
