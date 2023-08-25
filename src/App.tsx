@@ -44,7 +44,8 @@ const App: React.FC<Todo[]> = (): React.ReactNode => {
   return (
     <>
       {/* <ThemsContextProvider> */}
-        <Translate toTranslate='error_fa'/>
+      <Translate toTranslate='error_fa' />
+      <Icon children="a" svg position="top"/>
       {/* </ThemsContextProvider> */}
     </>
   )
