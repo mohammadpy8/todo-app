@@ -7,7 +7,7 @@ type ThemeContextProps = {
     children: React.ReactNode;
 };
 
-const ThemsContextProvider: React.FC<React.PropsWithChildren> = ({children}) => {
+const ThemsContextProvider: React.FC<PropsWithChildren> = ({children}) => {
     return (
         <div>
             <ThemeContext.Provider value={thems}>

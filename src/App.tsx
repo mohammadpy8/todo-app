@@ -9,6 +9,7 @@ import Counter from './components/Counter';
 import Header from './components/Header';
 
 import ThemsContextProvider from './context/ThemsContextProvider';
+import AuthContextProvider from './context/auth/AuthContextProvider';
 
 const App: React.FC<Todo[]> = (): React.ReactNode => {
 
@@ -40,9 +41,11 @@ const App: React.FC<Todo[]> = (): React.ReactNode => {
 
   return (
     <>
-      <ThemsContextProvider>
-        <Header />
-      </ThemsContextProvider>
+      {/* <ThemsContextProvider> */}
+        <AuthContextProvider>
+          <Header />
+        </AuthContextProvider>
+      {/* </ThemsContextProvider> */}
     </>
   )
 };
