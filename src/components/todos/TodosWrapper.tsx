@@ -1,14 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import Todo from './Todo';
-import TodoForm from './TodoForm';
+import Todo from './Todo'
+import TodoForm from './TodoForm'
+
+import { TodosTypes } from '../../types/Todos.type'
 
 const TodosWrapper = () => {
+  const [todos, setTodos] = useState<TodosTypes[]>([])
+
+  const addTodos = (title: string) => {
+    setTodos([
+      ...todos,
+      {
+        id: crypto.randomUUID(),
+        title,
+        completed: false,
+      },
+    ])
+
+    return true
+  }
+
+  const deleteTodo = (id: string) => {}
+
+  const toggleCompelte = (id: string) => {}
+
   return (
     <div className="TodoWrapper">
       <h1>Todo List ❤️ </h1>
-      <TodoForm />
-      <Todo />
+      <TodoForm addTodo={addTodos} />
+
+      {todos.map((todo) => (
+        <Todo />
+      ))}
     </div>
   )
 }
