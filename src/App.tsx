@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 import TodoList from './components/TodoList';
-
 import { Todo } from './types/Todo.type';
 
-import './App.css'
 import Counter from './components/Counter';
 import Header from './components/Header';
 
 import ThemsContextProvider from './context/ThemsContextProvider';
 import AuthContextProvider from './context/auth/AuthContextProvider';
+
+import './App.css';
+import Icon from './components/icon/Icon';
 
 const App: React.FC<Todo[]> = (): React.ReactNode => {
 
@@ -42,9 +43,7 @@ const App: React.FC<Todo[]> = (): React.ReactNode => {
   return (
     <>
       {/* <ThemsContextProvider> */}
-        <AuthContextProvider>
-          <Header />
-        </AuthContextProvider>
+      <Icon children="Test Icon" svg/>
       {/* </ThemsContextProvider> */}
     </>
   )
