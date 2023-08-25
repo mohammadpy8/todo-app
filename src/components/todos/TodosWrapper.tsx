@@ -43,7 +43,7 @@ const TodosWrapper = () => {
   }
 
     const toggleCompelte = (id: string) => {
-        setTodos(todos.filter(todo => todo.id === id));
+        setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed}: todo));
         return true;
   }
 
