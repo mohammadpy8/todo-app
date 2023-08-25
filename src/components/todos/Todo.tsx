@@ -1,12 +1,20 @@
-import React from 'react'
+import React from 'react';
+import { TodosTypes } from '../../types/Todos.type';
 
-const Todo = () => {
+type TodoProps = {
+    todo: TodosTypes;
+    deleteTodo: (id: string) => boolean;
+    toggleCompelte: (id: string) => boolean;
+}
+
+const Todo = ({todo, toggleCompelte, deleteTodo}: TodoProps) => {
+
   return (
     <div className="Todo">
       <p
-        className="" // or completed className
+        className={`${todo.completed ? "completed" : ""}`} // or completed className
       >
-        Test Todo Title :))
+        {todo.title}
       </p>
       <div>{/* <FontAwesomeIcon icon={faTrash} /> */}</div>
     </div>

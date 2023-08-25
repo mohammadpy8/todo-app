@@ -21,9 +21,13 @@ const TodosWrapper = () => {
     return true
   }
 
-  const deleteTodo = (id: string) => {}
+    const deleteTodo = (id: string) => {
+      return true
+  }
 
-  const toggleCompelte = (id: string) => {}
+    const toggleCompelte = (id: string) => {
+      return true
+  }
 
   return (
     <div className="TodoWrapper">
@@ -31,7 +35,7 @@ const TodosWrapper = () => {
       <TodoForm addTodo={addTodos} />
 
       {todos.map((todo) => (
-        <Todo />
+        <Todo todo={todo} toggleCompelte={toggleCompelte} deleteTodo={deleteTodo}/>
       ))}
     </div>
   )
