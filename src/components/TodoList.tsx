@@ -1,21 +1,28 @@
-import React from 'react';
-import Todo from './Todo';
-import { Todo as TodoType } from '../types/Todo.type';
+import React, { useEffect, useRef } from 'react'
+import Todo from './Todo'
+import { Todo as TodoType } from '../types/Todo.type'
 
 type TodoListProps = {
+  todos: TodoType[]
+}
 
-    todos: TodoType[];
+const TodoList: React.FC<TodoListProps> = ({ todos }) => {
+  const elem = useRef<HTMLInputElement>(null)
 
-};
+  useEffect(() => {
+    elem.current?.focus()
+  }, [])
 
-const TodoList : React.FC<TodoListProps> = ({todos}) => {
-    return (
-        <ul>
-            {todos.map(todo => (
-                <Todo key={todo.id} {...todo} />
-            ))}
-        </ul>
-    );
-};
+  return (
+    <>
+      <input type="text" placeholder="Todo Title" ref={elem} />
+      <ul>
+        {todos.map((todo) => (
+          <Todo key={todo.id} {...todo} />
+        ))}
+      </ul>
+    </>
+  )
+}
 
-export default TodoList;
+export default TodoList
