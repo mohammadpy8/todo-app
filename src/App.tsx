@@ -11,6 +11,7 @@ import AuthContextProvider from './context/auth/AuthContextProvider';
 
 import './App.css';
 import Icon from './components/icon/Icon';
+import Translate from './components/translate/Translate';
 
 const App: React.FC<Todo[]> = (): React.ReactNode => {
 
@@ -43,7 +44,7 @@ const App: React.FC<Todo[]> = (): React.ReactNode => {
   return (
     <>
       {/* <ThemsContextProvider> */}
-      <Icon children="Test Icon" svg/>
+        <Translate toTranslate='error_fa'/>
       {/* </ThemsContextProvider> */}
     </>
   )
