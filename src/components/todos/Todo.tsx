@@ -1,6 +1,9 @@
 import React from 'react';
 import { TodosTypes } from '../../types/Todos.type';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 type TodoProps = {
     todo: TodosTypes;
     deleteTodo: (id: string) => boolean;
@@ -16,7 +19,7 @@ const Todo = ({todo, toggleCompelte, deleteTodo}: TodoProps) => {
       >
         {todo.title}
       </p>
-      <div>{/* <FontAwesomeIcon icon={faTrash} /> */}</div>
+      <div><FontAwesomeIcon icon={faTrash} /></div>
     </div>
   )
 }
