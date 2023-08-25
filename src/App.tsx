@@ -6,6 +6,9 @@ import { Todo } from './types/Todo.type';
 
 import './App.css'
 import Counter from './components/Counter';
+import Header from './components/Header';
+
+import ThemsContextProvider from './context/ThemsContextProvider';
 
 const App: React.FC<Todo[]> = (): React.ReactNode => {
 
@@ -37,9 +40,9 @@ const App: React.FC<Todo[]> = (): React.ReactNode => {
 
   return (
     <>
-      {/* <TodoList todos={todosState}/> */}
-      <h1>mohammad</h1>
-      <Counter />
+      <ThemsContextProvider>
+        <Header />
+      </ThemsContextProvider>
     </>
   )
 };
