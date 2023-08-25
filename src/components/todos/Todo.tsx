@@ -15,11 +15,11 @@ const Todo = ({todo, toggleCompelte, deleteTodo}: TodoProps) => {
   return (
     <div className="Todo">
       <p
-        className={`${todo.completed ? "completed" : ""}`} // or completed className
+        className={`${todo.completed ? "completed" : ""}`}  onClick={() => toggleCompelte(todo.id)}// or completed className
       >
         {todo.title}
       </p>
-      <div><FontAwesomeIcon icon={faTrash} /></div>
+      <div><FontAwesomeIcon icon={faTrash} onClick={() => deleteTodo(todo.id)}/></div>
     </div>
   )
 }

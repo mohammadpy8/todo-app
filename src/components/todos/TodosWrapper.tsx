@@ -4,6 +4,7 @@ import Todo from './Todo'
 import TodoForm from './TodoForm'
 
 import { TodosTypes } from '../../types/Todos.type'
+import swal from 'sweetalert'
 
 const TodosWrapper = () => {
   const [todos, setTodos] = useState<TodosTypes[]>([])
@@ -22,11 +23,28 @@ const TodosWrapper = () => {
   }
 
     const deleteTodo = (id: string) => {
-      return true
+
+        swal({
+            title: "آیا از حدف مطمعن هستید.",
+            icon: "warning",
+            buttons: ["نه", "آره"]
+        }).then(result => {
+            console.log(result);
+            if (result) {
+                setTodos(todos.filter(todo => todo.id !== id));
+                
+                swal({
+                    title: "حذف با موفقیت انجام شد:)",
+                    icon: "success",
+                })
+            }
+        });
+        return true;
   }
 
     const toggleCompelte = (id: string) => {
-      return true
+        setTodos(todos.filter(todo => todo.id === id));
+        return true;
   }
 
   return (
@@ -35,7 +53,7 @@ const TodosWrapper = () => {
       <TodoForm addTodo={addTodos} />
 
       {todos.map((todo) => (
-        <Todo todo={todo} toggleCompelte={toggleCompelte} deleteTodo={deleteTodo}/>
+          <Todo key={todo.id} todo={todo} toggleCompelte={toggleCompelte} deleteTodo={deleteTodo}/>
       ))}
     </div>
   )
